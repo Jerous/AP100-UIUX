@@ -59,6 +59,7 @@ var gameModule = (function() {
         ctx.strokeStyle = "#FFFFFF";
         ctx.stroke();
         
+        
         //ctx.fillStyle = 'black';
         //ctx.beginPath();
         //ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2, true);
