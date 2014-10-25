@@ -33,10 +33,36 @@ var gameModule = (function() {
         ballY = Math.floor(Math.random() * maxHeight);
         ballR = Math.floor(Math.random() * maxR) + 30;
 
-        ctx.fillStyle = 'black';
-        ctx.beginPath();
         ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2, true);
+        // create radial gradient
+        var grd = ctx.createRadialGradient(ballX, ballY, ballR, 1.5*ballX, 1.5*ballY, ballR/2);
+        // light blue
+        grd.addColorStop(1, '#8ED6FF');
+        // dark blue
+        grd.addColorStop(0, '#004CB3');
+        ctx.fillStyle = grd;
         ctx.fill();
+        
+        //light line
+        ctx.beginPath() ;
+        ctx.lineCap = "round";
+        ctx.arc(ballX, ballY, ballR / 1.5, 1 * Math.PI, 1.2 * Math.PI, false) ;
+        ctx.lineWidth = ballR / 5;
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.stroke();
+        
+        //light point
+        ctx.beginPath() ;
+        ctx.lineCap = "round";
+        ctx.arc(ballX, ballY, ballR / 1.5, 1.33 * Math.PI, 1.35 * Math.PI, false) ;
+        ctx.lineWidth = ballR / 5;
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.stroke();
+        
+        //ctx.fillStyle = 'black';
+        //ctx.beginPath();
+        //ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2, true);
+        //ctx.fill();
 
         $("#game").on('click', function(event) {
             touchEvent(event);
