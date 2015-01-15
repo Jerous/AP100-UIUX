@@ -1,0 +1,18 @@
+@media (max-width:900px){
+	h2{
+		color:#00f;
+	}
+}
+
+
+@media (max-width:700px){
+	h2{
+		color:#F00;
+	}
+}
+
+@media (max-width:500px){
+	h2{
+		color:#0f0;
+	}
+}

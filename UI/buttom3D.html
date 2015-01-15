@@ -1,0 +1,52 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>button3D</title>
+    <style>
+        body {font-size: 4em;}
+        .btn{
+            border: none;
+            font-size: inherit;  /*繼承外層數值*/
+            background: none;
+            cursor: pointer;    /*滑鼠hover出現手指*/
+            display: inline-block;
+            text-transform: uppercase;  /*文字大寫*/
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            transition:all 0.3s;
+            -webkit-transition:all 0.3s;
+        }
+        
+        .btn-3d {
+            background: #CCCCCC;
+            color: #000;
+            box-shadow: 0 6px #666666;
+            -webkit-transition: none;
+            -moz-transition: none;
+            transition: none;
+            
+            /*border-radius: 100%;*/
+        }
+
+
+        .btn-3d:hover {
+            box-shadow: 0 8px #666666;
+            top: -2px;
+        }
+
+        .btn-3d:active {
+            box-shadow: 0 0 #666666;
+            top: 6px;
+        }
+    
+    </style>
+</head>
+<body>
+    <button class="btn btn-3d">Button</button>
+</body>
+</html>

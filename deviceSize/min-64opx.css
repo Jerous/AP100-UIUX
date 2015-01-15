@@ -1,0 +1,7 @@
+h1 {
+  color: #0052CC;
+}
+
+.desc:before {
+  content: "This browser window is at least 640px wide!";
+}

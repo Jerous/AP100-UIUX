@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Weather</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Weather Icons -->
+    <link href="bower_components/weather-icons/css/weather-icons.min.css" rel="stylesheet">
+    <style>
+        .weather {
+            margin: auto;
+            width: 320px;
+            height: 500px;
+            background: #0099FF; color: #fff;
+            overflow: hidden;
+        }
+        #content, .wIcon, .celsius {
+            width: inherit;
+            height: inherit;
+        }
+        .wIcon, .celsius, .city, .humidity {
+            float: left;
+            height: auto;
+        }
+        .city {
+            margin-left: 24%;
+            font-size: 4.5em;
+            color: #ffffff;
+        }
+        .icon {
+            margin-top: 12%;
+            margin-left: 21%;
+            font-size: 10em;
+            text-shadow: rgb(71, 71, 71) 1px 1px,
+    rgb(71, 71, 71) 2px 2px,
+    rgb(71, 71, 71) 3px 3px,
+    rgb(71, 71, 71) 4px 4px,
+    rgb(71, 71, 71) 5px 5px,
+    rgb(71, 71, 71) 6px 6px,
+    rgb(71, 71, 71) 7px 7px,
+    rgb(71, 71, 71) 8px 8px,
+    rgb(71, 71, 71) 9px 9px,
+    rgb(71, 71, 71) 10px 10px,
+    rgb(72, 72, 72) 11px 11px,
+    rgb(72, 72, 72) 12px 12px,
+    rgb(72, 72, 72) 13px 13px,
+    rgb(72, 72, 72) 14px 14px,
+    rgb(72, 72, 72) 15px 15px,
+    rgb(72, 72, 72) 16px 16px,
+    rgb(72, 72, 72) 17px 17px,
+    rgb(72, 72, 72) 18px 18px,
+    rgb(72, 72, 72) 19px 19px,
+    rgb(72, 72, 72) 20px 20px,
+    rgb(72, 72, 72) 21px 21px,
+    rgb(73, 73, 73) 22px 22px,
+    rgb(73, 73, 73) 23px 23px,
+    rgb(73, 73, 73) 24px 24px,
+    rgb(73, 73, 73) 25px 25px,
+    rgb(73, 73, 73) 26px 26px,
+    rgb(73, 73, 73) 27px 27px,
+    rgb(73, 73, 73) 28px 28px,
+    rgb(73, 73, 73) 29px 29px,
+    rgb(73, 73, 73) 30px 30px,
+    rgb(73, 73, 73) 31px 31px,
+    rgb(73, 73, 73) 32px 32px,
+    rgb(74, 74, 74) 33px 33px,
+    rgb(74, 74, 74) 34px 34px,
+    rgb(74, 74, 74) 35px 35px,
+    rgb(74, 74, 74) 36px 36px,
+    rgb(74, 74, 74) 37px 37px,
+    rgb(74, 74, 74) 38px 38px,
+    rgb(74, 74, 74) 39px 39px,
+    rgb(74, 74, 74) 40px 40px,
+    rgb(74, 74, 74) 41px 41px,
+    rgb(74, 74, 74) 42px 42px,
+    rgb(74, 74, 74) 43px 43px,
+    rgb(75, 75, 75) 44px 44px,
+    rgb(75, 75, 75) 45px 45px,
+    rgb(75, 75, 75) 46px 46px,
+    rgb(75, 75, 75) 47px 47px;
+        }
+        .celsius {
+            margin-left: 24%;
+            font-size: 3em;
+            color: #FFFFFF;
+        }
+        .humidity {
+            margin-left: 14%;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script id='postTemplate' type='text/x-jquery-tmpl'>
+        <h1 class="city">${cityname}</h1>
+        <div class="wIcon">
+            <i class="wi ${weatherIcon} icon"></i>
+        </div>
+        <p class="celsius"><span id="week" style="margin-right:20px;"></span> ${temp_celsius}<i class="wi wi-celsius"></i></p>
+        <h2 class="humidity"><i class="wi wi-sprinkles"></i> ${humidity} %</h2>
+        <h2 class="humidity"><i class="fa fa-umbrella" style="font-size:0.7em; vertical-align: top; padding-top:5px;"></i> ${clouds} %</h2>
+        <h2 class="humidity"><i class="wi wi-strong-wind" style="font-size:0.7em; vertical-align: top; padding-top:5px;"></i> ${windspeed} m/s</h2>
+    </script>
+
+    <div class="container">
+        <div class="weather">
+            <div id="content"></div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+	<script src='javascripts/jquery-tmpl/jquery.tmpl.min.js'></script>
+    <script src='javascripts/websocket.js'></script>
+	<script src='javascripts/main.js'></script>
+
+</body>
+
+</html>
+

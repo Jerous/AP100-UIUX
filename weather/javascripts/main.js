@@ -29,8 +29,21 @@
             var data = [];
             var obj = {};
             
+            
             obj.temp = response.main.temp;
+            obj.pressure = response.main.pressure;
             obj.humidity = response.main.humidity;
+            obj.temp_min = response.main.temp_min;
+            obj.temp_max = response.main.temp_max;
+            
+            obj.cityname = response.name;
+            
+            obj.country = response.sys.country;
+            obj.sunrise = response.sys.sunrise;
+            obj.sunset = response.sys.sunset;
+            obj.clouds = response.clouds.all;
+            obj.windspeed = response.wind.speed;
+
             
             // Weather Icons
             switch (response.weather[0].main) {
@@ -38,7 +51,9 @@
             }
             
             // Celsius
-            obj.celsius = parseInt(response.main.temp - 273.15);
+            obj.temp_celsius = parseInt(response.main.temp - 273.15);
+            obj.temp_min_celsius = parseInt(response.main.temp_min - 273.15);
+            obj.temp_max_celsius = parseInt(response.main.temp_max - 273.15);
             
             data.push(obj);
             

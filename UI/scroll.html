@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Scroll jQuery</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    
+    <!-- Fav Icon and Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="Hex@58w.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/Hex@76w.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/Hex@120w.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/Hex@152w.png">
+
+	<style>
+		h1{font-size:20em;}
+		.row {margin-bottom: 20px;}
+		.blue {background-color: #3399FF; color: #FFFFFF; height: 1000px;}
+        .red {background-color: #f00; color: #FFFFFF; height: 1000px;}
+        .green {background-color: #0f0; color: #FFFFFF; height: 1000px;}
+        .black {background-color: #CCC; color: #FFFFFF; height: 1000px;}
+        .darkblack {background-color: #333333; color: #FFFFFF; height: 1000px;}
+	</style>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			A1 = $("#link1").position();
+			A2 = $("#link2").position();
+			A3 = $("#link3").position();
+			A4 = $("#link4").position();
+			A5 = $("#link5").position();
+
+  			$("#btn1, #index").click(function(){
+    			$("html,body").animate({scrollTop: A1.top - 50});
+  			});
+  			$("#btn2").click(function(){
+    			$("html,body").animate({scrollTop: A2.top - 50});
+  			});
+  			$("#btn3").click(function(){
+    			$("html,body").animate({scrollTop: A3.top - 50});
+  			});
+  			$("#btn4").click(function(){
+    			$("html,body").animate({scrollTop: A4.top - 50});
+  			});
+  			$("#btn5").click(function(){
+    			$("html,body").animate({scrollTop: A5.top - 50});
+  			});
+		});
+	</script>
+</head>    
+
+<body style="padding: 50px;">
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a id="index" class="navbar-brand" href="#">Mokoversity</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a id="btn1" href="#">Link01</a></li>
+                <li><a id="btn2" href="#">Link02</a></li>
+                <li><a id="btn3" href="#">Link03</a></li>
+                <li><a id="btn4" href="#">Link04</a></li>
+                <li><a id="btn5" href="#">Link05</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+	</header>
+	
+	<div class="container-fluid">
+		<div id="link1" class="row"><div class="col-xs-12 col-sm-12 black"><h1>001</h1></div></div>
+		<div id="link2" class="row"><div class="col-xs-12 col-sm-12 red"><h1>002</h1></div></div>
+		<div id="link3" class="row"><div class="col-xs-12 col-sm-12 green"><h1>003</h1></div></div>
+		<div id="link4" class="row"><div class="col-xs-12 col-sm-12 blue"><h1>004</h1></div></div>
+		<div id="link5" class="row"><div class="col-xs-12 col-sm-12 darkblack"><h1>005</h1></div></div>
+	</div>
+</div>
+</body>
+</html>

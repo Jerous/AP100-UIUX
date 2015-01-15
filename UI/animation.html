@@ -1,0 +1,112 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <title></title>
+    <style>  
+    body { background-color: black; height: 100%; }
+    button {
+      display: inline-block;
+      margin: 0 1em;
+      border: none;
+      background: none;
+    }
+    button span {
+      display: block;
+    }
+
+    /*
+      line
+    */
+    .nav-toggle { position: absolute; left: 15%; top: 25%; }
+    
+    .nav-toggle .line, .nav-toggle .line:before, .nav-toggle .line:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 45px;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+    .nav-toggle .line:before{
+        top:-13px;        
+    }
+    .nav-toggle .line:after{
+        top:13px;        
+    }
+        
+    .nav-toggle .line, .nav-toggle .line:before, .nav-toggle .line:after {
+        transition: all 200ms ease-in-out;
+    }
+        
+    .nav-toggle.close .line{
+        background-color: transparent ;
+    }
+        
+    .nav-toggle.close .line:before, .nav-toggle.close .line:after {
+        top: 0;
+    }
+    .nav-toggle.close .line:before{
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .nav-toggle.close .line:after{
+        -webkit-transform: rotate(45deg);
+        transform: rotate(-45deg);
+    }    
+    
+    /*
+      grid
+    */
+    .grid-button { position: absolute; left: 35%; top: 25%; }
+    .grid-button {
+      padding: 1.4em;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grid-button .grid {
+      width: 1em;
+      height: 1em;
+      background: #ecf0f1;
+      color: #ecf0f1;
+      /* Not in use when the colors are specified below */
+      transition: 0.3s;
+    }
+    .grid-button:hover .grid {
+      -webkit-transform: rotate3d(0, 0, 1, -45deg);
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+    .grid-button.rearrange .grid{
+      box-shadow: -1.4em -1.4em, 0 -1.4em, 1.4em -1.4em, -1.4em 0, 1.4em 0, -1.4em 1.4em, 0 1.4em, 1.4em 1.4em;
+    }
+    .grid-button:hover .grid {
+      box-shadow: 0 -1em, 0 -2em, 1em 0, 2em 0, -1em 0, -2em 0, 0 1em, 0 2em;
+    }   
+        
+
+  </style>
+</head>
+<body>
+    <buttom class="nav-toggle" href="#" id="buttom">
+        <span class="line"></span>
+    </buttom>
+        
+    <button class="grid-button rearrange">
+      <span class="grid"></span>
+    </button>
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+        $(".nav-toggle").click(function(){
+          $(".nav-toggle").toggleClass("close");
+        });
+      });
+  </script>
+</body>
+</html>

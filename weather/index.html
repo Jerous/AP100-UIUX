@@ -17,16 +17,77 @@
     
     <!-- Weather Icons -->
     <link href="bower_components/weather-icons/css/weather-icons.min.css" rel="stylesheet">
+    <style>
+        .weather {
+            width: 320px;
+            height: 568px;
+            background-image: url("img/cloudyDay.png");
+        }
+    </style>
 </head>
 
 <body>
     <script id='postTemplate' type='text/x-jquery-tmpl'>
         <div class="col-md-4 col-md-offset-4 text-center" style="background: #0099FF; color: #fff; padding: 30px;">
-            <p style="font-size: 3em;">${celsius} ℃</p>
-            <i class="wi ${weatherIcon}" style="font-size: 3em;"></i>
+        <!--
+        <div class="title"></div>
+        <div class="cityname">${cityname}, ${country}</div>
+        <div class="weather">
+            <div class="weathericon"><i class="wi ${weatherIcon}" style="font-size: 2em;"></i>
+            </div>
+            <div class="tempnow">${temp_celsius} ℃
+            </div>
+        </div>
+        <hr>
+        <div class="sun">
+             <div class="sunrise">
+                 <div class="icon"><i class="wi wi-sunrise" style="font-size: 2em;"></i></div>
+                 <div class="font">${sunrise}</div>
+            </div>
+             <div class="sunset">
+                 <div class="icon"><i class="wi wi-sunset" style="font-size: 2em;"></i></div>
+                 <div class="font">${sunset}</div>
+            </div>
+        </div>
+        <div class="temp">
+             <div class="temp_max">
+                 <div class="icon"><i class="wi wi-cloud-up" style="font-size: 2em;"></i></div>
+                 <div class="font">${temp_max_celsius}</div>
+            </div>
+             <div class="temp_min">
+                 <div class="icon"><i class="wi wi-cloud-down" style="font-size: 2em;"></i></div>
+                 <div class="font">${temp_min_celsius}</div>
+            </div>
+        </div>
+        <div class="info">
+             <div class="wind">
+                 <div class="icon_s"><i class="wi wi-windy" style="font-size: 2em;"></i></div>
+                 <div class="font_s">${windspeed}</div>
+            </div>
+             <div class="pressure">
+                 <div class="icon_s"><i class="wi wi-tornado" style="font-size: 2em;"></i></div>
+                 <div class="font_s">${pressure}</div>
+            </div>
+            <div class="humidity">
+                 <div class="icon_s"><i class="wi wi-thermometer" style="font-size: 2em;"></i></div>
+                 <div class="font_s">${humidity}</div>
+            </div>
+        </div>-->
+
+            <p style="font-size: 3em;">${cityname}, ${country}</p>
+            <p style="font-size: 3em;"><i class="wi ${weatherIcon}" style="font-size: 2em;"></i>${temp_celsius} ℃</p>
+            <hr>
+            <p style="font-size: 1em;"><i class="wi wi-sunrise" style="font-size: 2em;"></i>： ${sunrise}</p>
+            <p style="font-size: 1em;"><i class="wi wi-sunset" style="font-size: 2em;"></i>： ${sunset}</p>
+            <p style="font-size: 1em;"><i class="wi wi-windy" style="font-size: 2em;"></i>： ${windspeed}</p>
+            <p style="font-size: 1em;"><i class="wi wi-tornado" style="font-size: 2em;"></i>： ${pressure}</p>
+            <p style="font-size: 1em;"><i class="wi wi-thermometer" style="font-size: 2em;"></i>： ${humidity}</p>
+            <p style="font-size: 1em;"><i class="fa fa-umbrella" style="font-size: 2em;"></i>： ${clouds} %</p>
+            <p style="font-size: 1em;"><i class="wi wi-cloud-up" style="font-size: 2em;"></i>： ${temp_min_celsius}</p>
+            <p style="font-size: 1em;"><i class="wi wi-cloud-down" style="font-size: 2em;"></i>： ${temp_max_celsius}</p>
         </div>
     </script>
-
+    <!--
     <script id='chatTemplate' type='text/x-jquery-tmpl'>
         <div class="col-md-4 col-md-offset-4 text-center" style="background: #94B8B8; color: #fff; padding: 10px;">
             <p style="font-size: 1.2em;">${message}, <span class="timestamp">${timestamp}</span></p>
@@ -51,7 +112,7 @@
           <button class="btn btn-default hide" data-action="sending"><i class="fa fa-refresh fa-spin"></i></button>
         </form>
     </div>
-    
+    -->
     
     <div class="container">
         <div class="row" id="content">
